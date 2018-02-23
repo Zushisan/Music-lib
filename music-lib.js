@@ -1,39 +1,39 @@
 class Library {
   constructor(name, creator) {
-    this.name = name
-    this.creator = creator
-    this.playlists = []
+    this._name = name
+    this._creator = creator
+    this._playlists = []
   }
-  get _getPlaylists() {
-    return console.log(this.playlists)
+  get getPlaylists() {
+    return console.log(this._playlists)
   }
-  set _addPlaylists(playlist) {
-    this.playlists.push(playlist)
+  set addPlaylists(playlist) {
+    this._playlists.push(playlist)
   }
 }
 
 class Playlist {
   constructor(name) {
-    this.name = name
-    this.tracks = []
+    this._name = name
+    this._tracks = []
   }
-  get _getTrack() {
-    return console.log(this.tracks)
+  get getTrack() {
+    return console.log(this._tracks)
   }
-  set _addTracks(track) {
-    this.tracks.push(track)
+  set addTracks(track) {
+    this._tracks.push(track)
   }
-  get _getOverallRating() {
+  get getOverallRating() {
     let overallRating = 0;
-    this.tracks.forEach(function(track) {
-      overallRating += track.rating
+    this._tracks.forEach(function(track) {
+      overallRating += track._rating
     })
-    return console.log(overallRating/this.tracks.length)
+    return console.log(overallRating/this._tracks._length)
   }
-  get _getTotalDuration() {
+  get getTotalDuration() {
     let totalDuration = 0;
-    this.tracks.forEach(function(track) {
-      totalDuration += track.length
+    this._tracks.forEach(function(track) {
+      totalDuration += track._length
     })
     return console.log(totalDuration)
   }
@@ -41,9 +41,9 @@ class Playlist {
 
 class Track {
   constructor(title, rating, length){
-    this.title = title
-    this.rating = rating
-    this.length = length
+    this._title = title
+    this._rating = rating
+    this._length = length
   }
 }
 
@@ -56,12 +56,12 @@ let Yo = new Track("What", 3, 300)
 
 
 
-myLib._addPlaylists = myPlaylist
+myLib.addPlaylists = myPlaylist
 
-myPlaylist._addTracks = pokerFace
-myPlaylist._addTracks = Yo
-myPlaylist._getTrack
-myLib._getPlaylists
+myPlaylist.addTracks = pokerFace
+myPlaylist.addTracks = Yo
+myPlaylist.getTrack
+myLib.getPlaylists
 
-myPlaylist._getTotalDuration
-myPlaylist._getOverallRating
+myPlaylist.getTotalDuration
+myPlaylist.getOverallRating
